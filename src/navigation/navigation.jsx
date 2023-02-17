@@ -6,6 +6,7 @@ import Signup from '../screens/Signup';
 import Verification from '../screens/Verification';
 import {getJWTToken, setJWTToken} from '../utils/jwt';
 import Home from '../screens/Home';
+import ForgetPassword from '../screens/ForgetPassword'
 import {API_BASE_URL} from '../constants';
 import axios from 'axios';
 import {Alert} from 'react-native';
@@ -75,6 +76,8 @@ const Navigation = () => {
               <Stack.Screen name="Signup" component={Signup} />
               <Stack.Screen name="Login" component={Login} />
               <Stack.Screen name="Verification" component={Verification} />
+              <Stack.Screen name = "ForgetPassword" component = {ForgetPassword}/>
+              <Stack.Screen name ="Home" component = {Home}/>
               <Stack.Screen
                 name="VerificationSuccess"
                 component={VerificationSuccess}

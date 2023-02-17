@@ -3,7 +3,8 @@ import {SCREEN_WIDTH} from '../../constants';
 
 const style = StyleSheet.create({
   form: {
-    marginBottom: 100,
+    marginBottom: 10,
+    paddingBottom:10,
   },
   inputTag: {
     fontSize: 13,
@@ -22,6 +23,7 @@ const style = StyleSheet.create({
     fontSize: 10,
     color: '#FF432A',
   },
+  
 });
 
 export default style;
