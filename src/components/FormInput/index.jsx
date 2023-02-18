@@ -8,7 +8,7 @@ import style from './style';
  * @component
  * @param {string} tag the question tag
  * @param {Object} icon
- * @param onChangeText
+ * @param {string} onChangeText
  * @param errorMessage
  * @param value
  * @param autoCorrect

@@ -5,6 +5,7 @@ const setCustomText = () => {
 
   let customStyle = {
     fontFamily: 'Poppins',
+    color: '#000',
   };
 
   Text.render = function render(props, ...rest) {
