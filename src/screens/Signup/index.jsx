@@ -13,7 +13,7 @@ const Signup = () => {
   const [email, setEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [btnDisabled, setBtnDisabled] = useState(true);
-  const logoUrl = require('../../assets/images/round_logo_no_text.png');
+  const logoUrl = require('../../assets/images/logo/round_logo_no_text.png');
 
   const onVerifyPressed = async data => {
     console.log('go');
@@ -92,6 +92,11 @@ const Signup = () => {
           text={'Verify Email'}
           otherStyle={styles.btn}
         />
+        <Text onPress={() => {
+              navigation.navigate('Home');
+            }}>
+            TO HOME
+        </Text>
 
         {/*todo: update hyperlink url*/}
         <Text style={styles.agreement}>
