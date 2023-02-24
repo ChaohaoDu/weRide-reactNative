@@ -97,6 +97,11 @@ const Signup = () => {
             }}>
             TO HOME
         </Text>
+        <Text onPress={() => {
+              navigation.navigate('CreatePassword');
+            }}>
+            TO CREATE Password
+        </Text>
 
         <Text onPress={() => {
               navigation.navigate('OnBoarding');
