@@ -13,11 +13,14 @@ import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 
+var first_click = true;
 const OnBoarding = () => {
   const auth = React.useContext(AuthContext);
   const logoUrl = require('../../assets/images/logo/logo_text_at_bottom.png');
   const riderURLOne = require("../../assets/images/on_boarding/matched_on_boarding_get_match.png");
   const riderURLTwo = require("../../assets/images/on_boarding/driver_on_boarding_driver.png");
+  const logoTextOnRightUrl = require('../../assets/images/logo/square_logo_text_on_right.png');
+  
   const onLogoutPressed = async () => {
     await deleteJWToken();
     auth.signOut();
@@ -43,28 +46,42 @@ const OnBoarding = () => {
   });
   const [riderUrl, riderUrlSetPic] = useState(riderURLOne);
 
+
   const onPressHandler = (event) => {
-    sloganSetText("Certified Driver and Rider");
-    tipSetText("All drivers and riders are certified UCSD students.");
-    riderUrlSetPic(riderURLTwo);
-    imgSetStyle({
-      width:280,
-      height:208,
-      marginTop:50,
-    });
-    tipSetStyle({
-      fontSize: 18,
-      fontWeight: '500',
-      color: 'black',
-      marginTop: 20,
-    })
-    dotSetStyle({
-      marginLeft: -20,
-      padding: -10,
-      color: '#171616',
-      fontSize: 40,
-    })
+    if (first_click) {
+      sloganSetText("Certified Driver and Rider");
+      tipSetText("All drivers and riders are certified UCSD students.");
+      riderUrlSetPic(riderURLTwo);
+      imgSetStyle({
+        width:280,
+        height:208,
+        marginTop:50,
+      });
+      tipSetStyle({
+        fontSize: 18,
+        fontWeight: '500',
+        color: 'black',
+        marginTop: 20,
+      })
+      dotSetStyle({
+        marginLeft: -20,
+        padding: -10,
+        color: '#171616',
+        fontSize: 40,
+      })
+      first_click = false;
+    }
+    else {
+      riderUrlSetPic(logoTextOnRightUrl);
+      imgSetStyle({
+        width:260,
+        height:105,
+        marginTop:50,
+      });
+      first_click = !first_click;
+    }
   };
+
 
   return (
     <SafeAreaView>
