@@ -19,16 +19,16 @@ const styles = StyleSheet.create({
     fontSize: 38,
     fontWeight: '800',
   },
-  rider: {
-    marginLeft:75,
-    width:425,
-    height:323,
-  },
-  tip: {
-    fontSize: 18,
-    fontWeight: '500',
-    color: 'black',
-  },
+  // rider: {
+  //   marginLeft:75,
+  //   width:425,
+  //   height:323,
+  // },
+  // tip: {
+  //   fontSize: 18,
+  //   fontWeight: '500',
+  //   color: 'black',
+  // },
   rightArrow: {
     fontSize: 40,
     color: '#172B54',
@@ -43,12 +43,12 @@ const styles = StyleSheet.create({
     marginLeft: 165,
     fontSize: 40,
   },
-  dotTwo: {
-    marginLeft: -20,
-    padding: -10,
-    color: '#D9D9D9',
-    fontSize: 40,
-  }
+  // dotTwo: {
+  //   marginLeft: -20,
+  //   padding: -10,
+  //   color: '#D9D9D9',
+  //   fontSize: 40,
+  // }
 });
 
 export default styles;

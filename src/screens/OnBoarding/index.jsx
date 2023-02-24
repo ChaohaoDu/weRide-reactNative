@@ -25,13 +25,45 @@ const OnBoarding = () => {
  
   const [sloganText, sloganSetText] = useState("Get Matched!");
   const [tipText, tipSetText] = useState("Schedule you trip ahead and get a match with you potential driver/rider.");
-  // const [imgStyle, imgSetStyle] = useState({});
+  const [imgStyle, imgSetStyle] = useState({
+    marginLeft:75,
+    width:425,
+    height:323,
+  });
+  const [tipStyle, tipSetStyle] = useState({
+    fontSize: 18,
+    fontWeight: '500',
+    color: 'black',
+  });
+  const [dotStyle, dotSetStyle] = useState({
+    marginLeft: -20,
+    padding: -10,
+    color: '#D9D9D9',
+    fontSize: 40,
+  });
   const [riderUrl, riderUrlSetPic] = useState(riderURLOne);
 
   const onPressHandler = (event) => {
     sloganSetText("Certified Driver and Rider");
     tipSetText("All drivers and riders are certified UCSD students.");
     riderUrlSetPic(riderURLTwo);
+    imgSetStyle({
+      width:280,
+      height:208,
+      marginTop:50,
+    });
+    tipSetStyle({
+      fontSize: 18,
+      fontWeight: '500',
+      color: 'black',
+      marginTop: 20,
+    })
+    dotSetStyle({
+      marginLeft: -20,
+      padding: -10,
+      color: '#171616',
+      fontSize: 40,
+    })
   };
 
   return (
@@ -40,18 +72,14 @@ const OnBoarding = () => {
       <Text style={styles.skip}>Skip</Text>
         <Image source={logoUrl} style={styles.logo} />
         <Text style={styles.slogan}>{sloganText}</Text>
-
-        <Image source={riderUrl} style={styles.rider} />
-
-        <Text style={styles.tip}>{tipText}</Text>
-
+        <Image source={riderUrl} style={imgStyle} />
+        <Text style={tipStyle}>{tipText}</Text>
         <AntDesign name="rightcircle" style={styles.rightArrow} title="Change Text"
         onPress={onPressHandler}></AntDesign>
-
       </View>
       <View style={styles.dot}>
         <Entypo name="dot-single" style={styles.dotOne}></Entypo>
-        <Entypo name="dot-single" style={styles.dotTwo}></Entypo>
+        <Entypo name="dot-single" style={dotStyle}></Entypo>
       </View>
     </SafeAreaView>
   );
