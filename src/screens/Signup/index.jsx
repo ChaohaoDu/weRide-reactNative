@@ -98,6 +98,12 @@ const Signup = () => {
             TO HOME
         </Text>
 
+        <Text onPress={() => {
+              navigation.navigate('OnBoarding');
+            }}>
+            TO ONBOARDING
+        </Text>
+
         {/*todo: update hyperlink url*/}
         <Text style={styles.agreement}>
           By signing up, you're agreeing to our
