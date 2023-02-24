@@ -6,13 +6,13 @@ const styles = StyleSheet.create({
     padding: 38,
   },
   logo: {
-    width: 152,
-    height: 166,
+    width: 64,
+    height: 64,
     marginTop: 50,
     marginBottom: 20,
   },
   title: {
-    fontSize: 20,
+    fontSize: 30,
     fontWeight: '500',
     color: 'black',
     lineHeight: 45,

@@ -12,6 +12,7 @@ import axios from 'axios';
 import {Alert} from 'react-native';
 import {authInit, authReducer} from '../reducers/auth';
 import VerificationSuccess from '../screens/VerificationSuccess';
+import CreatePassword from '../screens/CreatePassword';
 
 const Stack = createNativeStackNavigator();
 export const AuthContext = React.createContext();
@@ -78,6 +79,7 @@ const Navigation = () => {
               <Stack.Screen name="Verification" component={Verification} />
               <Stack.Screen name = "ForgetPassword" component = {ForgetPassword}/>
               <Stack.Screen name ="Home" component = {Home}/>
+              <Stack.Screen name ="CreatePassword" component = {CreatePassword}/>
               <Stack.Screen
                 name="VerificationSuccess"
                 component={VerificationSuccess}
