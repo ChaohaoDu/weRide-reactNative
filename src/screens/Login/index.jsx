@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Image, Linking, SafeAreaView, Text, View} from 'react-native';
 import styles from './style';
-import {ucsdEmailRegex} from '../../constants';
+import {ucsdEmailRegex} from '../../constants/constants';
 import {useNavigation} from '@react-navigation/core';
 import LongBottom from '../../components/LongButton';
 import FormInput from '../../components/FormInput';
@@ -10,11 +10,10 @@ import Feather from 'react-native-vector-icons/Feather';
 const Login = () => {
   const navigation = useNavigation();
 
-
   const [email, setEmail] = useState('');
-  const [password,setPassword] = useState('');   //I guess write like this?
+  const [password, setPassword] = useState(''); //I guess write like this?
   const [errorMessage, setErrorMessage] = useState('');
-  const [incorrectPasswordError,setIncorrectPasswordError] = useState('');
+  const [incorrectPasswordError, setIncorrectPasswordError] = useState('');
   const [btnDisabled, setBtnDisabled] = useState(true);
   const logoUrl = require('../../assets/images/logo/round_logo_no_text.png');
 
@@ -50,10 +49,10 @@ const Login = () => {
     setBtnDisabled(false);
   };
 
-  const validatePassword = ()=> {
+  const validatePassword = () => {
     //todo
-    return
-  }
+    return;
+  };
   return (
     <SafeAreaView>
       <View style={styles.root}>
@@ -93,7 +92,7 @@ const Login = () => {
           autoCorrect={false}
           autoCapitalize={'none'}
           inputMode={'password'}
-          onBlur={validatePassword}    //todo how to onblue this
+          onBlur={validatePassword} //todo how to onblue this
           placeholder={'Enter your password'}
         />
         {/* <CheckBox
@@ -101,14 +100,12 @@ const Login = () => {
         onPress={handleRememberMe}
         checkedColor="#FF6347"
         /> */}
-        
-         
 
         <Text style={{marginBottom: 52}}>
           <Text
             style={styles.leftText}
             onPress={() => {
-              navigation.navigate("ForgetPassword");   
+              navigation.navigate('ForgetPassword');
             }}>
             Forget Password?
           </Text>
@@ -116,10 +113,10 @@ const Login = () => {
 
         <LongBottom
           onPress={() => {
-            navigation.navigate("Home");
+            navigation.navigate('Home');
           }} //Todo verify login infos
           disabled={btnDisabled}
-          text={'Login'}  
+          text={'Login'}
           otherStyle={styles.btn}
         />
       </View>

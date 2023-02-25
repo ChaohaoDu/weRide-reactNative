@@ -1,10 +1,10 @@
 import {StyleSheet} from 'react-native';
-import {SCREEN_WIDTH} from '../../constants';
+import {SCREEN_WIDTH} from '../../constants/constants';
 
 const style = StyleSheet.create({
   form: {
     marginBottom: 10,
-    paddingBottom:10,
+    paddingBottom: 10,
   },
   inputTag: {
     fontSize: 13,
@@ -24,7 +24,6 @@ const style = StyleSheet.create({
     fontSize: 10,
     color: '#FF432A',
   },
-  
 });
 
 export default style;
