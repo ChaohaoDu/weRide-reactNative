@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Image, Linking, SafeAreaView, Text, View} from 'react-native';
 import styles from './style';
-import {ucsdEmailRegex} from '../../constants';
+import {ucsdEmailRegex} from '../../constants/constants';
 import {useNavigation} from '@react-navigation/core';
 import LongBottom from '../../components/LongButton';
 import FormInput from '../../components/FormInput';

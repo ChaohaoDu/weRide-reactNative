@@ -1,7 +1,7 @@
 import {Alert, SafeAreaView, Text, View} from 'react-native';
 import React, {useState} from 'react';
 import axios from 'axios';
-import {API_BASE_URL} from '../../constants';
+import {API_BASE_URL} from '../../constants/constants';
 import LongBottom from '../../components/LongButton';
 import FourDigitInput from '../../components/FourDigitInput';
 import styles from './style';

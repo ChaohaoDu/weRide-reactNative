@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Colors} from '../../constants/colors';
 
 const styles = StyleSheet.create({
   root: {
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
     marginBottom: 22,
   },
   loginBtn: {
-    color: '#FE8E67',
+    color: Colors.CORAL,
     fontWeight: '700',
   },
   buttonText: {
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
     left: 38,
   },
   baseText: {
-    color: '#000000'
+    color: '#000000',
   },
 });
 

@@ -19,8 +19,7 @@ const OnBoarding = () => {
   const logoUrl = require('../../assets/images/logo/logo_text_at_bottom.png');
   const riderURLOne = require("../../assets/images/on_boarding/matched_on_boarding_get_match.png");
   const riderURLTwo = require("../../assets/images/on_boarding/driver_on_boarding_driver.png");
-  const logoTextOnRightUrl = require('../../assets/images/logo/square_logo_text_on_right.png');
-  
+  const navigation = useNavigation();
   const onLogoutPressed = async () => {
     await deleteJWToken();
     auth.signOut();
@@ -72,21 +71,18 @@ const OnBoarding = () => {
       first_click = false;
     }
     else {
-      riderUrlSetPic(logoTextOnRightUrl);
-      imgSetStyle({
-        width:260,
-        height:105,
-        marginTop:50,
-      });
+      // change to get started
+      navigation.navigate('GetStarted');
       first_click = !first_click;
     }
   };
 
-
   return (
     <SafeAreaView>
       <View style={styles.root}>
-      <Text style={styles.skip}>Skip</Text>
+      <Text style={styles.skip} onPress={() => {
+                    navigation.navigate('GetStarted');
+                }}>Skip</Text>
         <Image source={logoUrl} style={styles.logo} />
         <Text style={styles.slogan}>{sloganText}</Text>
         <Image source={riderUrl} style={imgStyle} />

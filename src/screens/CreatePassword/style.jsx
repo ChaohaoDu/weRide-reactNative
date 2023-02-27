@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Colors} from '../../constants/colors';
 
 const styles = StyleSheet.create({
   root: {
@@ -19,10 +20,9 @@ const styles = StyleSheet.create({
     marginBottom: 22,
   },
   loginBtn: {
-    color: '#FE8E67',
+    color: Colors.CORAL,
     fontWeight: '700',
   },
-  
   buttonText: {
     fontSize: 100,
     color: 'orange',
@@ -45,19 +45,20 @@ const styles = StyleSheet.create({
     top: 550,
     left: 38,
   },
-  container: {  //todo
+  container: {
+    //todo
     flexDirection: 'row',
     justifyContent: 'space-between',
     // paddingHorizontal: 20,
     // paddingVertical: 10,
   },
   leftText: {
-    font:"Poppins",
+    font: 'Poppins',
     textAlign: 'left',
     fontSize: 11,
   },
   rightText: {
-    font:"Poppins",
+    font: 'Poppins',
     textAlign: 'right',
     fontSize: 11,
   },
