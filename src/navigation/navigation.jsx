@@ -6,14 +6,16 @@ import Signup from '../screens/Signup';
 import Verification from '../screens/Verification';
 import {getJWTToken, setJWTToken} from '../utils/jwt';
 import Home from '../screens/Home';
-import ForgetPassword from '../screens/ForgetPassword'
+import ForgetPassword from '../screens/ForgetPassword';
 import {API_BASE_URL} from '../constants/constants';
 import axios from 'axios';
 import {Alert} from 'react-native';
 import {authInit, authReducer} from '../reducers/auth';
 import VerificationSuccess from '../screens/VerificationSuccess';
 import CreatePassword from '../screens/CreatePassword';
-
+import OnBoarding from '../screens/OnBoarding';
+import GetStarted from '../screens/GetStarted';
+import LocationAndNotification from '../screens/LocationAndNotification';
 const Stack = createNativeStackNavigator();
 export const AuthContext = React.createContext();
 const Navigation = () => {
@@ -80,6 +82,9 @@ const Navigation = () => {
               <Stack.Screen name="ForgetPassword" component={ForgetPassword} />
               <Stack.Screen name ="Home" component = {Home}/>
               <Stack.Screen name ="CreatePassword" component = {CreatePassword}/>
+              <Stack.Screen name ="OnBoarding" component = {OnBoarding}/>
+              <Stack.Screen name ="GetStarted" component = {GetStarted}/>
+              <Stack.Screen name ="LocationAndNotification" component = {LocationAndNotification}/>
               <Stack.Screen
                 name="VerificationSuccess"
                 component={VerificationSuccess}

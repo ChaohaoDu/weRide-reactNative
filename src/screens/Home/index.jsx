@@ -10,6 +10,7 @@ import LongBottom from '../../components/LongButton';
 import FormInput from '../../components/FormInput';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import Feather from 'react-native-vector-icons/Feather';
+
 const Home = () => {
   const auth = React.useContext(AuthContext);
   const logoUrl = require('../../assets/images/logo/logo_text_at_bottom.png');
