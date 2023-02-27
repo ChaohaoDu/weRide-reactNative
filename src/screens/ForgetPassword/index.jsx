@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {SafeAreaView, Text,View,Image} from 'react-native';
+import {SafeAreaView, Text, View, Image} from 'react-native';
 import {deleteJWToken} from '../../utils/jwt';
 import {AuthContext} from '../../navigation/navigation';
 import {useNavigation} from '@react-navigation/core';
@@ -7,15 +7,16 @@ import LongBottom from '../../components/LongButton';
 import FormInput from '../../components/FormInput';
 import styles from './style';
 import Fontisto from 'react-native-vector-icons/Fontisto';
+import {ucsdEmailRegex} from '../../constants/constants';
 
 const ForgetPassword = () => {
-  
   const [email, setEmail] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [btnDisabled, setBtnDisabled] = useState(true);
   const auth = React.useContext(AuthContext);
-  const notRegistedErrorMessage = 'This email has not been registered,Please use your registered UCSD email to proceed to sign up'
-  const lockUrl = require("../../assets/images/forgot_password/lock.png")
+  const notRegistedErrorMessage =
+    'This email has not been registered,Please use your registered UCSD email to proceed to sign up';
+  const lockUrl = require('../../assets/images/forgot_password/lock.png');
   const onLogoutPressed = async () => {
     await deleteJWToken();
     auth.signOut();
@@ -53,12 +54,12 @@ const ForgetPassword = () => {
           placeholder={'Enter your UCSD email address'}
         />
 
-          <LongBottom
+        <LongBottom
           onPress={() => {
-            navigation.navigate("Home");
+            navigation.navigate('Home');
           }} //Todo verify login infos
           disabled={btnDisabled}
-          text={'Continue'}  
+          text={'Continue'}
           otherStyle={styles.btn}
         />
       </View>

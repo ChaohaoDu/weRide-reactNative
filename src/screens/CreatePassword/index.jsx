@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
-import {Image, Linking, SafeAreaView, Text, View} from 'react-native';
+import {SafeAreaView, Text, View} from 'react-native';
 import styles from './style';
-import {ucsdEmailRegex} from '../../constants/constants';
 import {useNavigation} from '@react-navigation/core';
 import LongBottom from '../../components/LongButton';
 import FormInput from '../../components/FormInput';
-import Fontisto from 'react-native-vector-icons/Fontisto';
 import Feather from 'react-native-vector-icons/Feather';
+
 const CreatePassword = () => {
   // const auth = React.useContext(AuthContext);
   //     const onLogoutPressed = async () => {

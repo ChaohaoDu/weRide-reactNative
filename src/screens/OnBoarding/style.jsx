@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   skip: {
     fontSize: 18,
     fontWeight: '200',
-    marginRight:-320,
+    marginRight: -320,
   },
   logo: {
     width: 50,
@@ -33,10 +33,10 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: '#172B54',
     marginTop: 25,
-    marginRight:-310,
+    marginRight: -310,
   },
   dot: {
-    flexDirection:'row',
+    flexDirection: 'row',
   },
   dotOne: {
     color: '#171616',

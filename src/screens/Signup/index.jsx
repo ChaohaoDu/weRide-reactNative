@@ -92,21 +92,24 @@ const Signup = () => {
           text={'Verify Email'}
           otherStyle={styles.btn}
         />
-        <Text onPress={() => {
-              navigation.navigate('Home');
-            }}>
-            TO HOME
+        <Text
+          onPress={() => {
+            navigation.navigate('Home');
+          }}>
+          TO HOME
         </Text>
-        <Text onPress={() => {
-              navigation.navigate('CreatePassword');
-            }}>
-            TO CREATE Password
+        <Text
+          onPress={() => {
+            navigation.navigate('CreatePassword');
+          }}>
+          TO CREATE Password
         </Text>
 
-        <Text onPress={() => {
-              navigation.navigate('OnBoarding');
-            }}>
-            TO ONBOARDING
+        <Text
+          onPress={() => {
+            navigation.navigate('OnBoarding');
+          }}>
+          TO ONBOARDING
         </Text>
 
         {/*todo: update hyperlink url*/}
