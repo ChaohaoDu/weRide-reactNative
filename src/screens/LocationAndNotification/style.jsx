@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   },
   img1: {
     position: 'absolute',
-    top: SCREEN_HEIGHT * 0.34,
+    top: SCREEN_HEIGHT * 0.32,
     left: SCREEN_WIDTH * 0.2,
     width: 228.768,
     height: 291.168,
