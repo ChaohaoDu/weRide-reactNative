@@ -14,10 +14,10 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {SCREEN_WIDTH, SCREEN_HEIGHT} from '../../constants/constants';
 let first_click = true;
-const OnBoarding = () => {
+const OnBoarding1 = () => {
     const auth = React.useContext(AuthContext);
     const logoImg = require('../../assets/images/logo/logo_text_at_bottom.png');
-    const driverImgOne = require('../../assets/images/on_boarding/matched_on_boarding_get_match.png');
+    const driverImgTwo = require('../../assets/images/on_boarding/driver_on_boarding_driver.png');
     const navigation = useNavigation();
 
     const onLogoutPressed = async () => {
@@ -32,25 +32,25 @@ const OnBoarding = () => {
                         navigation.navigate('GetStarted');
                     }}>Skip
                 </Text>
-                <Text style={styles.slogan}>Get Matched!</Text>
+                <Text style={styles.slogan}>Certified Driver and Rider</Text>
                 <Image source={logoImg} style={styles.logo} />
-                <Image source={driverImgOne} style={styles.driverOne}/>
-                <Text style={styles.tip}>Schedule you trip ahead 
-                and get a match with you potential driver/rider.</Text>
+                <Image source={driverImgTwo} style={styles.driverTwo}/>
+                <Text style={styles.tip}>All drivers and riders are certified
+                 UCSD students.</Text>
                 <AntDesign
                     name="rightcircle"
                     style={styles.rightArrow}
                     onPress={() => {
-                        navigation.navigate('OnBoarding1');
+                        navigation.navigate('GetStarted');
                     }}
                 />
                 <View style={styles.dot}>
                     <Entypo name="dot-single" style={styles.dotOne} />
-                    <Entypo name="dot-single" style={styles.dotTwo} />
+                    <Entypo name="dot-single" style={styles.dotTwo1} />
                 </View>
             </View>
         </SafeAreaView>
     );
 };
 
-export default OnBoarding;
+export default OnBoarding1;
