@@ -1,15 +1,9 @@
 import React, {useState} from 'react';
-import {Image, Linking, SafeAreaView, Text, View} from 'react-native';
+import {Image, Linking, SafeAreaView, TouchableOpacity, Text, View} from 'react-native';
 import {deleteJWToken} from '../../utils/jwt';
 import {AuthContext} from '../../navigation/navigation';
-import CheckBox from 'react-native'
 import styles from './style';
-import {ucsdEmailRegex} from '../../constants/constants';
-import {useNavigation} from '@react-navigation/core';
-import LongBottom from '../../components/LongButton';
-import FormInput from '../../components/FormInput';
-import Fontisto from 'react-native-vector-icons/Fontisto';
-import Feather from 'react-native-vector-icons/Feather';
+import RoleContainer from '../../components/RoleContainer';
 
 const Home = () => {
   const auth = React.useContext(AuthContext);
@@ -20,14 +14,24 @@ const Home = () => {
     await deleteJWToken();
     auth.signOut();
   };
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImagePress = (image) => {
+    setSelectedImage(image);
+  };
+
 
   return (
     <SafeAreaView>
       <View style={styles.root}>
         <Image source={logoUrl} style={styles.logo} />
-        <Text>Home</Text>
-        <Image source={driverURL} style={styles.driver} />
-        <Image source={riderURL} style={styles.rider} />
+        <Text style = {styles.title1}>Choose</Text>
+        <Text style = {styles.title2}>Your Role</Text>
+        <RoleContainer 
+          pictureURL={driverURL}
+          role = {"Drive"}
+          />
+
       </View>
     </SafeAreaView>
   );
