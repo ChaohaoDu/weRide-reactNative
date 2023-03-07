@@ -13,6 +13,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {SCREEN_WIDTH, SCREEN_HEIGHT} from '../../constants/constants';
+
 let first_click = true;
 const OnBoarding = () => {
     const auth = React.useContext(AuthContext);
