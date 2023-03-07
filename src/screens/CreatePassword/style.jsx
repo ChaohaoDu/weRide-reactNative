@@ -3,7 +3,7 @@ import {Colors} from '../../constants/colors';
 
 const styles = StyleSheet.create({
   root: {
-    alignItems: 'center',
+    alignItems: 'flex-start',
     padding: 38,
   },
   logo: {
@@ -13,11 +13,25 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   title: {
-    fontSize: 30,
+    font : "Poppins",
+    fontSize: 35,
+    fontWeight: '500',
+    color: 'black',
+    lineHeight: 45,
+    marginTop : 146,
+  },
+  title2: {
+    font : "Poppins",
+    fontSize: 35,
     fontWeight: '500',
     color: 'black',
     lineHeight: 45,
     marginBottom: 22,
+  },
+  regular:{
+    font:"Roboto",
+    fontSize: 10,
+    fontWeight: '400',
   },
   loginBtn: {
     color: Colors.CORAL,
