@@ -8,41 +8,41 @@ const styles = StyleSheet.create({
   },
   slogan: {
     position: 'absolute',
-    top: SCREEN_HEIGHT * 0.18,
+    top: SCREEN_HEIGHT * 0.15,
     textAlign: 'center',
     fontSize: 38,
     fontWeight: '800',
   },
   img: {
     position: 'absolute',
-    top: SCREEN_HEIGHT * 0.32,
+    top: SCREEN_HEIGHT * 0.28,
     left: SCREEN_WIDTH * 0.1,
     width: 353,
     height: 350,
   },
   img1: {
     position: 'absolute',
-    top: SCREEN_HEIGHT * 0.32,
+    top: SCREEN_HEIGHT * 0.28,
     left: SCREEN_WIDTH * 0.2,
     width: 228.768,
     height: 291.168,
   },
   tip: {
     position: 'absolute',
-    top: SCREEN_HEIGHT * 0.75,
+    top: SCREEN_HEIGHT * 0.70,
     fontSize: 17,
     textAlign: 'center',
   },
   btn: {
     position: 'absolute', 
-    top: SCREEN_HEIGHT * 0.82,
+    top: SCREEN_HEIGHT * 0.77,
     textAlign: 'center',
   },
   btn1: {
     position: 'absolute',
-    top: SCREEN_HEIGHT * 0.93,
+    top: SCREEN_HEIGHT * 0.88,
     fontSize: 17,
-    fontWeight: '650',
+    fontWeight: '600',
     textAlign: 'center',
   }
 });
