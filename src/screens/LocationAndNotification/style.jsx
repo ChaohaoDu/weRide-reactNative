@@ -4,7 +4,8 @@ import {SCREEN_WIDTH, SCREEN_HEIGHT} from '../../constants/constants';
 const styles = StyleSheet.create({
   root: {
     alignItems: 'center',
-    padding: 20,
+    paddingLeft: 20,
+    paddingRight: 20,
   },
   slogan: {
     position: 'absolute',
@@ -34,17 +35,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   btn: {
-    position: 'absolute', 
-    top: SCREEN_HEIGHT * 0.82,
+    position: 'absolute',
+    top: SCREEN_HEIGHT * 0.75,
     textAlign: 'center',
   },
   btn1: {
     position: 'absolute',
-    top: SCREEN_HEIGHT * 0.93,
+    top: SCREEN_HEIGHT * 0.9,
     fontSize: 17,
-    fontWeight: '650',
+    fontWeight: '600',
     textAlign: 'center',
-  }
+  },
 });
 
 export default styles;

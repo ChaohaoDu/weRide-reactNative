@@ -9,7 +9,7 @@ const style = StyleSheet.create({
   inputTag: {
     fontSize: 13,
     fontWeight: '500',
-    marginBottom: 10,
+    marginBottom: 5,
     color: 'black',
   },
   inputContainer: {
