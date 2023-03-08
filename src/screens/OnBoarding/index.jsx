@@ -1,16 +1,17 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  Image,
-  StyleSheet,
-  FlatList,
-  View,
-  Text,
-  StatusBar,
-  TouchableOpacity,
+import { 
+  SafeAreaView, 
+  Image, 
+  StyleSheet, 
+  FlatList, 
+  View, 
+  Text, 
+  StatusBar, 
+  TouchableOpacity, 
   Dimensions,
 } from 'react-native';
 
+import {useNavigation} from '@react-navigation/core';
 const {width, height} = Dimensions.get('window');
 
 const COLORS = {primary: '#282534', white: '#fff'};
@@ -19,17 +20,17 @@ const slides = [
   {
     id: '1',
     image: require('../images/test3.png'),
-    title: 'Best Digital Solution',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Get Matched!',
+    subtitle: 'Schedule you trip ahead and get a match with your driver/rider. ',
   },
   {
     id: '2',
     image: require('../../assets/images/on_boarding/driver_on_boarding_driver.png'),
-    title: 'Achieve Your Goals',
-    subtitle: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    title: 'Certified Driver and Rider',
+    subtitle: 'All drivers and riders are certified UCSD students.',
   },
 ];
-
+const logoImg = require('../../assets/images/logo/logo_text_at_bottom.png');
 const Slide = ({item}) => {
   return (
     <View style={{alignItems: 'center'}}>
@@ -39,7 +40,6 @@ const Slide = ({item}) => {
         style={{height: '75%', width, resizeMode: 'contain'}}
       />
       <View>
-        
         <Text style={styles.subtitle}>{item?.subtitle}</Text>
       </View>
     </View>
@@ -47,6 +47,7 @@ const Slide = ({item}) => {
 };
 
 const OnBoarding = () => {
+  const navigation = useNavigation();
   const [currentSlideIndex, setCurrentSlideIndex] = React.useState(0);
   const ref = React.useRef();
   const updateCurrentSlideIndex = e => {
@@ -62,13 +63,17 @@ const OnBoarding = () => {
       ref?.current.scrollToOffset({offset});
       setCurrentSlideIndex(currentSlideIndex + 1);
     }
+    else {
+      navigation.navigate('GetStarted');
+    }
   };
 
   const skip = () => {
-    const lastSlideIndex = slides.length - 1;
-    const offset = lastSlideIndex * width;
-    ref?.current.scrollToOffset({offset});
-    setCurrentSlideIndex(lastSlideIndex);
+    // const lastSlideIndex = slides.length - 1;
+    // const offset = lastSlideIndex * width;
+    // ref?.current.scrollToOffset({offset});
+    // setCurrentSlideIndex(lastSlideIndex);
+    navigation.navigate('GetStarted');
   };
 
   const Footer = () => {
@@ -103,17 +108,6 @@ const OnBoarding = () => {
 
         {/* Render buttons */}
         <View style={{marginBottom: 20}}>
-          {currentSlideIndex == slides.length - 1 ? (
-            <View style={{height: 50}}>
-              <TouchableOpacity
-                style={styles.btn}
-                onPress={() => navigation.replace('HomeScreen')}>
-                <Text style={{fontWeight: 'bold', fontSize: 15}}>
-                  GET STARTED
-                </Text>
-              </TouchableOpacity>
-            </View>
-          ) : (
             <View style={{flexDirection: 'row'}}>
               <TouchableOpacity
                 activeOpacity={0.8}
@@ -149,7 +143,6 @@ const OnBoarding = () => {
                 </Text>
               </TouchableOpacity>
             </View>
-          )}
         </View>
       </View>
     );
@@ -157,7 +150,8 @@ const OnBoarding = () => {
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.primary}}>
-      <StatusBar backgroundColor={COLORS.primary} />
+      {/* <StatusBar backgroundColor={COLORS.primary} /> */}
+      {/* <Image source={logoImg} style={styles.logo} /> */}
       <FlatList
         ref={ref}
         onMomentumScrollEnd={updateCurrentSlideIndex}
@@ -184,7 +178,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: COLORS.white,
-    fontSize: 22,
+    fontSize: 23,
     fontWeight: 'bold',
     marginTop: 20,
     textAlign: 'center',
