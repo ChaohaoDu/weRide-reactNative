@@ -8,14 +8,14 @@ import {SafeAreaView, View} from 'react-native';
 import ActivityBoard from './src/screens/ActivityBoard';
 setCustomText();
 const App: () => Node = () => {
-  return (
-    <SafeAreaView>
-      <View style={{padding: 10}}>
-        <ActivityBoard />
-      </View>
-    </SafeAreaView>
-  );
-  // return <Navigation />;
+  // return (
+  //   <SafeAreaView>
+  //     <View style={{padding: 10}}>
+  //       <ActivityBoard />
+  //     </View>
+  //   </SafeAreaView>
+  // );
+  return <Navigation />;
   // return <Verification />;
   // return <Login />;
 };
