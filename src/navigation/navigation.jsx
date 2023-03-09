@@ -49,6 +49,7 @@ const Navigation = () => {
           },
           tabBarInactiveTintColor: Colors.TAB_INACTIVE,
           tabBarActiveTintColor: Colors.TAB_ACTIVE,
+          headerShown: false,
         })}>
         <Tab.Screen name="Home" component={Signup} />
         <Tab.Screen name="Activity" component={Login} />
