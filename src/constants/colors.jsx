@@ -4,4 +4,7 @@ export const Colors = {
   DARK_SALMON: '#D18165',
   ORANGE: '#FCBD2A',
   GAINSBORO: '#E7E7E7',
+
+  TAB_ACTIVE: '#0C0C0C',
+  TAB_INACTIVE: '#B6B6B6',
 };

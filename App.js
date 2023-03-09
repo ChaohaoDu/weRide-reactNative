@@ -5,7 +5,7 @@ import Verification from './src/screens/Verification';
 import Login from './src/screens/Login';
 import setCustomText from './src/utils/setCustomText';
 import {SafeAreaView, View} from 'react-native';
-import ActivityBoard from './src/screens/ActivityBoard';
+import ActivityBoard from './src/components/ActivityBoard';
 setCustomText();
 const App: () => Node = () => {
   // return (

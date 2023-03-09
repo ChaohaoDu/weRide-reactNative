@@ -14,20 +14,52 @@ import GetStarted from '../screens/GetStarted';
 import LocationAndNotification from '../screens/LocationAndNotification/index';
 import LocationAndNotification1 from '../screens/LocationAndNotification/index1';
 import Teleport from '../screens/teleport';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Octicons from 'react-native-vector-icons/Octicons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import {Colors} from '../constants/colors';
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 export const AuthContext = React.createContext();
 const Navigation = () => {
   let authContext = null;
 
+  const TabNavigator = () => {
+    return (
+      <Tab.Navigator
+        screenOptions={({route}) => ({
+          tabBarIcon: ({focused, color, size}) => {
+            switch (route.name) {
+              case 'Home':
+                return <Octicons name="home" size={size} color={color} />;
+              case 'Activity':
+                return (
+                  <Ionicons name="ios-list-outline" size={size} color={color} />
+                );
+              case 'Profile':
+                return (
+                  <Ionicons
+                    name="ios-person-outline"
+                    size={size}
+                    color={color}
+                  />
+                );
+            }
+          },
+          tabBarInactiveTintColor: Colors.TAB_INACTIVE,
+          tabBarActiveTintColor: Colors.TAB_ACTIVE,
+        })}>
+        <Tab.Screen name="Home" component={Signup} />
+        <Tab.Screen name="Activity" component={Login} />
+        <Tab.Screen name="Profile" component={Login} />
+      </Tab.Navigator>
+    );
+  };
   return (
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerShown: false,
-            cardStyle: {backgroundColor: '#fff'},
-          }}>
+        <Stack.Navigator screenOptions={{headerShown: false}}>
           <Stack.Screen name="Teleport" component={Teleport} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="Login" component={Login} />
@@ -50,6 +82,7 @@ const Navigation = () => {
             name="VerificationSuccess"
             component={VerificationSuccess}
           />
+          <Stack.Screen name="Main" component={TabNavigator} />
         </Stack.Navigator>
       </NavigationContainer>
     </AuthContext.Provider>
