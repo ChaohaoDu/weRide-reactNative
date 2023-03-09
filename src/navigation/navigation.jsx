@@ -14,7 +14,6 @@ import {authInit, authReducer} from '../reducers/auth';
 import VerificationSuccess from '../screens/VerificationSuccess';
 import CreatePassword from '../screens/CreatePassword';
 import OnBoarding from '../screens/OnBoarding/index';
-import OnBoarding1 from '../screens/OnBoarding/index1';
 import GetStarted from '../screens/GetStarted';
 import LocationAndNotification from '../screens/LocationAndNotification/index';
 import LocationAndNotification1 from '../screens/LocationAndNotification/index1';
@@ -85,7 +84,6 @@ const Navigation = () => {
               <Stack.Screen name ="Home" component = {Home}/>
               <Stack.Screen name ="CreatePassword" component = {CreatePassword}/>
               <Stack.Screen name ="OnBoarding" component = {OnBoarding}/>
-              <Stack.Screen name ="OnBoarding1" component = {OnBoarding1}/>
               <Stack.Screen name ="GetStarted" component = {GetStarted}/>
               <Stack.Screen name ="LocationAndNotification" component = {LocationAndNotification}/>
               <Stack.Screen name ="LocationAndNotification1" component = {LocationAndNotification1}/>

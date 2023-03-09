@@ -1,82 +1,52 @@
 import {StyleSheet} from 'react-native';
-import {SCREEN_WIDTH, SCREEN_HEIGHT} from '../../constants/constants';
+import { Dimensions} from 'react-native';
+const {width, height} = Dimensions.get('window');
+const COLORS = {primary: '#F5F5F5', titleColor: '#172B4D'};
 
 const styles = StyleSheet.create({
   root: {
     alignItems: 'center',
     padding: 20,
   },
-  skip: {
-    position: 'absolute',
-    fontSize: 18,
-    fontWeight: '600',
-    top: 20,
-    right: 20,
-  },
   logo: {
-    position: 'absolute',
+    alignItems: 'center',
     width: 50,
     height: 64,
-    top: SCREEN_HEIGHT * 0.0567,
-  },
-  slogan: {
-    position: 'absolute',
-    top: SCREEN_HEIGHT * 0.25,
     textAlign: 'center',
-    fontSize: 38,
-    fontWeight: '800',
+    top: height * 0.04,
   },
-  driverOne: {
+  fl: {
     position: 'absolute',
-    top: SCREEN_HEIGHT * 0.34,
-    left: SCREEN_WIDTH * 0.05,
-    width: 425,
-    height: 323,
+    top: height * 0.15,
   },
-  driverTwo: {
-    position: 'absolute',
-    top: SCREEN_HEIGHT * 0.40,
-    left: SCREEN_WIDTH * 0.05,
-    width: 336,
-    height: 252,
-  },
-  tip: {
-    position: 'absolute',
+  subtitle: {
+    color: COLORS.titleColor,
+    fontSize: 14,
+    marginTop: -20,
+    maxWidth: '70%',
     textAlign: 'center',
-    fontSize: 17,
-    top: SCREEN_HEIGHT * 0.75,
+    lineHeight: 23,
   },
-  rightArrow: {
-    position: 'absolute',
-    fontSize: 40,
-    color: '#172B54',
-    top: SCREEN_HEIGHT * 0.85,
-    right: SCREEN_WIDTH * 0.06,
+  title: {
+    color: COLORS.titleColor,
+    fontSize: 28,
+    fontWeight: 'bold',
+    marginTop: 20,
+    textAlign: 'center',
   },
-  dot: {
-    position: 'absolute',
-    top: SCREEN_HEIGHT * 0.93,
-    position: 'absolute',
-    flexDirection: 'row',
+  image: {
+    height: '100%',
+    width: '100%',
+    resizeMode: 'contain',
   },
-  dotOne: {
-    position: 'absolute',
-    color: '#171616',
-    right: -SCREEN_WIDTH * 0.03,
-    fontSize: 40,
-  },
-  dotTwo: {
-    position: 'absolute',
-    color: '#D9D9D9',
-    left: -SCREEN_WIDTH * 0.03,
-    fontSize: 40,
-  },
-  dotTwo1: {
-    position: 'absolute',
-    color: '#171616',
-    left: -SCREEN_WIDTH * 0.03,
-    fontSize: 40,
-  },
+  indicator: {
+    height: 2.5,
+    width: 10,
+    backgroundColor: 'grey',
+    marginHorizontal: 3,
+    borderRadius: 2,
+    top: height * 0.73,
+  }
 });
 
 export default styles;

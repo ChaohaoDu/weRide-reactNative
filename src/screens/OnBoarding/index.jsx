@@ -1,21 +1,11 @@
 import React from 'react';
-import { 
-  SafeAreaView, 
-  Image, 
-  StyleSheet, 
-  FlatList, 
-  View, 
-  Text, 
-  StatusBar, 
-  TouchableOpacity, 
-  Dimensions,
-} from 'react-native';
-
+import { SafeAreaView, Image, FlatList, View, Text, Dimensions} from 'react-native';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/core';
+import styles from './style';
+
 const {width, height} = Dimensions.get('window');
-
-const COLORS = {primary: '#282534', white: '#fff'};
-
+const COLORS = {primary: '#F5F5F5', titleColor: '#172B4D'};
 const slides = [
   {
     id: '1',
@@ -69,139 +59,90 @@ const OnBoarding = () => {
   };
 
   const skip = () => {
-    // const lastSlideIndex = slides.length - 1;
-    // const offset = lastSlideIndex * width;
-    // ref?.current.scrollToOffset({offset});
-    // setCurrentSlideIndex(lastSlideIndex);
     navigation.navigate('GetStarted');
   };
 
-  const Footer = () => {
+
+  const Indicator = () => {
     return (
       <View
         style={{
-          height: height * 0.25,
-          justifyContent: 'space-between',
-          paddingHorizontal: 20,
+          flexDirection: 'row',
+          justifyContent: 'center',
+          marginTop: 20,
         }}>
-        {/* Indicator container */}
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'center',
-            marginTop: 20,
-          }}>
-          {/* Render indicator */}
-          {slides.map((_, index) => (
-            <View
-              key={index}
-              style={[
-                styles.indicator,
-                currentSlideIndex == index && {
-                  backgroundColor: COLORS.white,
-                  width: 25,
-                },
-              ]}
-            />
-          ))}
-        </View>
-
-        {/* Render buttons */}
-        <View style={{marginBottom: 20}}>
-            <View style={{flexDirection: 'row'}}>
-              <TouchableOpacity
-                activeOpacity={0.8}
-                style={[
-                  styles.btn,
-                  {
-                    borderColor: COLORS.white,
-                    borderWidth: 1,
-                    backgroundColor: 'transparent',
-                  },
-                ]}
-                onPress={skip}>
-                <Text
-                  style={{
-                    fontWeight: 'bold',
-                    fontSize: 15,
-                    color: COLORS.white,
-                  }}>
-                  SKIP
-                </Text>
-              </TouchableOpacity>
-              <View style={{width: 15}} />
-              <TouchableOpacity
-                activeOpacity={0.8}
-                onPress={goToNextSlide}
-                style={styles.btn}>
-                <Text
-                  style={{
-                    fontWeight: 'bold',
-                    fontSize: 15,
-                  }}>
-                  NEXT
-                </Text>
-              </TouchableOpacity>
-            </View>
-        </View>
+        {/* Render indicator */}
+        {slides.map((_, index) => (
+          <View
+            key={index}
+            style={[
+              styles.indicator,
+              currentSlideIndex == index && {
+                backgroundColor: COLORS.titleColor,
+                width: 25,
+              },
+            ]}
+          />
+        ))}
       </View>
-    );
-  };
+    )
+  }
+
+  const Skipbtn = () => {
+    return (
+      <Text
+        onPress={skip}
+        style={{
+          position: 'absolute',
+          fontSize: 18,
+          fontWeight: '600',
+          top: 20,
+          right: 20,
+        }}>
+        Skip
+      </Text>
+    )
+  }
+
+
+  const Nextbtn = () => {
+    return (
+      <AntDesign
+        onPress={goToNextSlide}
+        name="rightcircle"
+        style={{
+          position: 'absolute',
+          fontSize: 40,
+          color: '#172B54',
+          top: height * 0.88,
+          right: width * 0.06,
+        }}
+      />
+    )
+  }
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: COLORS.primary}}>
-      {/* <StatusBar backgroundColor={COLORS.primary} /> */}
-      {/* <Image source={logoImg} style={styles.logo} /> */}
+      <View style={styles.root}>
+        <Skipbtn />
+        <Image source={logoImg} style={styles.logo} />
+      </View>
       <FlatList
-        ref={ref}
-        onMomentumScrollEnd={updateCurrentSlideIndex}
-        contentContainerStyle={{height: height * 0.75}}
-        showsHorizontalScrollIndicator={false}
-        horizontal
-        data={slides}
-        pagingEnabled
-        renderItem={({item}) => <Slide item={item} />}
-      />
-      <Footer />
+          style={styles.fl}
+          ref={ref}
+          onMomentumScrollEnd={updateCurrentSlideIndex}
+          contentContainerStyle={{height: height * 0.75}}
+          showsHorizontalScrollIndicator={false}
+          horizontal
+          data={slides}
+          pagingEnabled
+          renderItem={({item}) => <Slide item={item} />}
+        />
+        <Indicator />
+        <Nextbtn />
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({
-  subtitle: {
-    color: COLORS.white,
-    fontSize: 13,
-    marginTop: 10,
-    maxWidth: '70%',
-    textAlign: 'center',
-    lineHeight: 23,
-  },
-  title: {
-    color: COLORS.white,
-    fontSize: 23,
-    fontWeight: 'bold',
-    marginTop: 20,
-    textAlign: 'center',
-  },
-  image: {
-    height: '100%',
-    width: '100%',
-    resizeMode: 'contain',
-  },
-  indicator: {
-    height: 2.5,
-    width: 10,
-    backgroundColor: 'grey',
-    marginHorizontal: 3,
-    borderRadius: 2,
-  },
-  btn: {
-    flex: 1,
-    height: 50,
-    borderRadius: 5,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
+
 export default OnBoarding;
