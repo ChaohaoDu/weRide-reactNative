@@ -46,7 +46,7 @@ const FormInput = ({
         ]}>
         {icon}
         <TextInput
-          style={{padding: 2, fontSize: 16}}
+          style={{padding: 2, fontSize: 16, width: '100%'}}
           ref={inputRef}
           onChangeText={text => onChangeText(text)}
           value={value}

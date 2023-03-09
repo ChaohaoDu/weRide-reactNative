@@ -5,6 +5,7 @@ const style = StyleSheet.create({
   form: {
     marginBottom: 10,
     paddingBottom: 10,
+    width: '100%',
   },
   inputTag: {
     fontSize: 13,

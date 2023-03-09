@@ -95,11 +95,6 @@ const Login = () => {
           onBlur={validatePassword} //todo how to onblue this
           placeholder={'Enter your password'}
         />
-        {/* <CheckBox
-        checked={rememberMe}
-        onPress={handleRememberMe}
-        checkedColor="#FF6347"
-        /> */}
 
         <Text style={{marginBottom: 52}}>
           <Text
