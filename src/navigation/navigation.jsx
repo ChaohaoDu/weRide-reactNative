@@ -9,7 +9,6 @@ import ForgetPassword from '../screens/ForgetPassword';
 import VerificationSuccess from '../screens/VerificationSuccess';
 import CreatePassword from '../screens/CreatePassword';
 import OnBoarding from '../screens/OnBoarding/index';
-import OnBoarding1 from '../screens/OnBoarding/index1';
 import GetStarted from '../screens/GetStarted';
 import LocationAndNotification from '../screens/LocationAndNotification/index';
 import LocationAndNotification1 from '../screens/LocationAndNotification/index1';
@@ -60,6 +59,7 @@ const Navigation = () => {
   return (
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
+
         <Stack.Navigator screenOptions={{headerShown: false}}>
           <Stack.Screen name="Teleport" component={Teleport} />
           <Stack.Screen name="Signup" component={Signup} />
@@ -83,7 +83,7 @@ const Navigation = () => {
             name="VerificationSuccess"
             component={VerificationSuccess}
           />
-          <Stack.Screen name="Main" component={TabNavigator} />
+          <Stack.Screen name="Main" component={TabNavigator} /> main
         </Stack.Navigator>
       </NavigationContainer>
     </AuthContext.Provider>
