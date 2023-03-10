@@ -46,6 +46,17 @@ const styles = StyleSheet.create({
     top: 550,
     left: 38,
   },
+  bottomText1: {
+    position: 'absolute',
+    bottom: -150,
+    fontSize: 16,
+    height: '-150%',
+  },
+  bottomText2: {
+    position: 'absolute',
+    bottom: -170,
+    fontSize: 16,
+  },
   container: {
     //todo
     flexDirection: 'row',

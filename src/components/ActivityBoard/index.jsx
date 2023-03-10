@@ -10,10 +10,10 @@ const ActivityBoard = () => {
     return (
       <View style={styles.userInfo}>
         <View style={styles.flexContainer}>
-          <Image
+          {/* <Image
             source={require('../../assets/images/avatar-temp.png')}
             style={styles.avatar}
-          />
+          /> */}
 
           <View>
             <Text>Aly Wang</Text>

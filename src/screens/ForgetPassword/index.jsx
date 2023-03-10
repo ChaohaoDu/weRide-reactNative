@@ -14,6 +14,7 @@ const ForgetPassword = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [btnDisabled, setBtnDisabled] = useState(true);
   const auth = React.useContext(AuthContext);
+  const navigation = useNavigation();
   const notRegistedErrorMessage =
     'This email has not been registered,Please use your registered UCSD email to proceed to sign up';
   const lockUrl = require('../../assets/images/forgot_password/lock.png');
@@ -56,12 +57,26 @@ const ForgetPassword = () => {
 
         <LongBottom
           onPress={() => {
-            navigation.navigate('Home');
+            useNavigation.navigate('Home');
           }} //Todo verify login infos
           disabled={btnDisabled}
           text={'Continue'}
           otherStyle={styles.btn}
         />
+
+        <Text style={styles.bottomText1}>
+          If you don't have an account register
+        </Text>
+        <Text style={styles.bottomText2}>
+          You can {}
+          <Text
+            style={styles.loginBtn}
+            onPress={() => {
+              navigation.navigate('Signup');
+            }}>
+            Sign up here!
+          </Text>
+        </Text>
       </View>
     </SafeAreaView>
   );
