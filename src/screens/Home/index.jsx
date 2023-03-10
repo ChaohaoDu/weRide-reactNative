@@ -85,12 +85,12 @@ const Home = () => {
         <Text style={styles.title1}>Choose</Text>
         <Text style={styles.title2}>Your Role</Text>
         <View style={styles.containerWrapper}>
-          <Container
+          <ComponentContainer
             imageSource={require('../../assets/images/choose_your_role/rider.png')}
             label="Rider"
             onSelect={setRiderSelected}
           />
-          <Container
+          <ComponentContainer
             imageSource={require('../../assets/images/choose_your_role/driver.png')}
             label="Driver"
             onSelect={setDriverSelected}
@@ -98,7 +98,7 @@ const Home = () => {
         </View>
         <LongBottom
           onPress={() => {
-            navigation.navigate('Home');
+            navigation.navigate('OnBoarding');
           }} //Todo verify login infos
           // disabled={btnDisabled}
           text={'Login'}
