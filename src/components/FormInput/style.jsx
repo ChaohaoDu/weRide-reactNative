@@ -5,11 +5,12 @@ const style = StyleSheet.create({
   form: {
     marginBottom: 10,
     paddingBottom: 10,
+    width: '100%',
   },
   inputTag: {
     fontSize: 13,
     fontWeight: '500',
-    marginBottom: 10,
+    marginBottom: 5,
     color: 'black',
   },
   inputContainer: {

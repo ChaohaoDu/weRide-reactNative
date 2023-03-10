@@ -50,80 +50,64 @@ const Signup = () => {
   return (
     <SafeAreaView>
       <View style={styles.root}>
-        <Image source={logoUrl} style={styles.logo} />
-        <Text style={styles.title}>Sign Up</Text>
-        <Text style={styles.baseText}>
-          If you already have an account register.
-        </Text>
-        <Text style={{marginBottom: 52, color: '#000000'}}>
-          You can {}
-          <Text
-            style={styles.loginBtn}
-            onPress={() => {
-              navigation.navigate('Login');
-            }}>
-            Login Here!
+        <View style={{height: '40%', width: '100%'}}>
+          <Image source={logoUrl} style={styles.logo} />
+          <Text style={styles.title}>Sign Up</Text>
+          <Text style={styles.baseText}>
+            If you already have an account register.
           </Text>
-        </Text>
-
-        <FormInput
-          tag={'Email'}
-          icon={
-            <Fontisto
-              name={'email'}
-              color={'#000000'}
-              style={{marginRight: 8}}
-              size={16}
-            />
-          }
-          onChangeText={setEmail}
-          errorMessage={errorMessage}
-          value={email}
-          autoCorrect={false}
-          autoCapitalize={'none'}
-          inputMode={'email'}
-          onBlur={validateEmail}
-          placeholder={'Enter your UCSD email address'}
-        />
-
-        <LongBottom
-          onPress={onVerifyPressed}
-          disabled={btnDisabled}
-          text={'Verify Email'}
-          otherStyle={styles.btn}
-        />
-        <Text
-          onPress={() => {
-            navigation.navigate('Home');
-          }}>
-          TO HOME
-        </Text>
-        <Text
-          onPress={() => {
-            navigation.navigate('CreatePassword');
-          }}>
-          TO CREATE Password
-        </Text>
-
-        <Text
-          onPress={() => {
-            navigation.navigate('OnBoarding');
-          }}>
-          TO ONBOARDING
-        </Text>
-
-        {/*todo: update hyperlink url*/}
-        <Text style={styles.agreement}>
-          By signing up, you're agreeing to our
-          <Text onPress={() => Linking.openURL()} style={styles.hyperlink}>
-            Terms & Conditions{' '}
+          <Text style={{marginBottom: 52, color: '#000000'}}>
+            You can {}
+            <Text
+              style={styles.loginBtn}
+              onPress={() => {
+                navigation.navigate('Login');
+              }}>
+              Login Here!
+            </Text>
           </Text>
-          and
-          <Text onPress={() => Linking.openURL()} style={styles.hyperlink}>
-            {' '}
-            Privacy Policy
+        </View>
+        <View style={{height: '20%', width: '100%'}}>
+          <FormInput
+            tag={'Email'}
+            icon={
+              <Fontisto
+                name={'email'}
+                color={'#000000'}
+                style={{marginRight: 8}}
+                size={16}
+              />
+            }
+            onChangeText={setEmail}
+            errorMessage={errorMessage}
+            value={email}
+            autoCorrect={false}
+            autoCapitalize={'none'}
+            inputMode={'email'}
+            onBlur={validateEmail}
+            placeholder={'Enter your UCSD email address'}
+          />
+        </View>
+        <View style={{height: '40%', width: '100%'}}>
+          <LongBottom
+            onPress={onVerifyPressed}
+            disabled={btnDisabled}
+            text={'Verify Email'}
+            otherStyle={styles.btn}
+          />
+          {/*todo: update hyperlink url*/}
+          <Text style={styles.agreement}>
+            By signing up, you're agreeing to our
+            <Text onPress={() => Linking.openURL()} style={styles.hyperlink}>
+              Terms & Conditions{' '}
+            </Text>
+            and
+            <Text onPress={() => Linking.openURL()} style={styles.hyperlink}>
+              {' '}
+              Privacy Policy
+            </Text>
           </Text>
-        </Text>
+        </View>
       </View>
     </SafeAreaView>
   );

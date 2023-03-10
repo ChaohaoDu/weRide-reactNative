@@ -1,6 +1,5 @@
-import React from 'react';
-import {Text, TextInput, View} from 'react-native';
-import Fontisto from 'react-native-vector-icons/Fontisto';
+import React, {useRef} from 'react';
+import {Pressable, Text, TextInput, View} from 'react-native';
 import style from './style';
 
 /**
@@ -31,8 +30,14 @@ const FormInput = ({
   onBlur,
   placeholder,
 }) => {
+  const inputRef = useRef(null);
+
+  const handlePress = () => {
+    inputRef.current.focus();
+  };
+
   return (
-    <View style={style.form}>
+    <Pressable style={style.form} onPress={handlePress}>
       <Text style={style.inputTag}>{tag}</Text>
       <View
         style={[
@@ -41,6 +46,8 @@ const FormInput = ({
         ]}>
         {icon}
         <TextInput
+          style={{padding: 2, fontSize: 16, width: '100%'}}
+          ref={inputRef}
           onChangeText={text => onChangeText(text)}
           value={value}
           autoCorrect={autoCorrect}
@@ -49,13 +56,12 @@ const FormInput = ({
           onBlur={onBlur}
           placeholder={placeholder}
           placeholderTextColor={'#888181'}
-          style={{padding: 2, fontSize: 16}}
         />
       </View>
       {errorMessage ? (
         <Text style={style.errorText}>{errorMessage}</Text>
       ) : null}
-    </View>
+    </Pressable>
   );
 };
 
