@@ -59,7 +59,6 @@ const Navigation = () => {
   return (
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
-
         <Stack.Navigator screenOptions={{headerShown: false}}>
           <Stack.Screen name="Teleport" component={Teleport} />
           <Stack.Screen name="Signup" component={Signup} />
@@ -69,7 +68,6 @@ const Navigation = () => {
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="CreatePassword" component={CreatePassword} />
           <Stack.Screen name="OnBoarding" component={OnBoarding} />
-          <Stack.Screen name="OnBoarding1" component={OnBoarding1} />
           <Stack.Screen name="GetStarted" component={GetStarted} />
           <Stack.Screen
             name="LocationAndNotification"
@@ -83,7 +81,7 @@ const Navigation = () => {
             name="VerificationSuccess"
             component={VerificationSuccess}
           />
-          <Stack.Screen name="Main" component={TabNavigator} /> main
+          <Stack.Screen name="Main" component={TabNavigator} />
         </Stack.Navigator>
       </NavigationContainer>
     </AuthContext.Provider>
