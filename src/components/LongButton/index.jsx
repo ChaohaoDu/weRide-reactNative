@@ -12,7 +12,7 @@ const LongBottom = ({onPress, disabled = false, text, otherStyle}) => {
         style.btn,
         disabled
           ? {backgroundColor: '#CACFDA'}
-          : {backgroundColor: Colors.MIDNIGHT_BLUE},
+          : {backgroundColor: Colors.PRIMARY_COLOR},
         otherStyle,
       ]}>
       <Text style={style.btnText}>{text}</Text>
