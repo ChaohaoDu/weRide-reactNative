@@ -20,9 +20,9 @@ const Teleport = () => {
       <Text onPress={() => navigation.navigate('VerificationSuccess')}>
         VerificationSuccess
       </Text>
-      <Text onPress={() => navigation.navigate('Main')}>main</Text>
       <Text onPress={() => navigation.navigate('OnBoarding')}>OnBoarding</Text>
       <Text onPress={() => navigation.navigate('Home')}>Home</Text>
+      <Text onPress={() => navigation.navigate('Main')}>main</Text>
     </SafeAreaView>
   );
 };

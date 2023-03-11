@@ -4,7 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Login from '../screens/Login';
 import Signup from '../screens/Signup';
 import Verification from '../screens/Verification';
-import Home from '../screens/Home';
+import RoleSelect from '../screens/Home';
 import ForgetPassword from '../screens/ForgetPassword';
 import VerificationSuccess from '../screens/VerificationSuccess';
 import CreatePassword from '../screens/CreatePassword';
@@ -65,7 +65,7 @@ const Navigation = () => {
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Verification" component={Verification} />
           <Stack.Screen name="ForgetPassword" component={ForgetPassword} />
-          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="RoleSelect" component={RoleSelect} />
           <Stack.Screen name="CreatePassword" component={CreatePassword} />
           <Stack.Screen name="OnBoarding" component={OnBoarding} />
           <Stack.Screen name="GetStarted" component={GetStarted} />

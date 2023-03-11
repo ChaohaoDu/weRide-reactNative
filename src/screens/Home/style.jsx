@@ -13,15 +13,10 @@ const styles = StyleSheet.create({
   },
   title1: {
     fontSize: 38,
-    fontWeight: '700',
     color: 'black',
     font: 'Poppins',
-    fontWieght: 'bold',
+    fontWeight: 'bold',
     lineHeight: 45,
-  },
-  btn: {
-    position: 'absolute',
-    top: 550,
   },
   title2: {
     fontSize: 32,
@@ -69,6 +64,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#444444',
     marginTop: 10,
+  },
+  btn: {
+    position: 'absolute',
+    top: 550,
   },
 });
 
