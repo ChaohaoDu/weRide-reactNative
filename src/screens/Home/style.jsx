@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-
+import {StyleSheet, Dimensions} from 'react-native';
+const {width} = Dimensions.get('window');
 const styles = StyleSheet.create({
   root: {
     alignItems: 'center',
@@ -10,34 +10,65 @@ const styles = StyleSheet.create({
     height: 80,
     marginTop: 30,
     marginBottom: 20,
-
-    
   },
   title1: {
     fontSize: 38,
     fontWeight: '700',
     color: 'black',
-    font:"Poppins",
-    fontWieght:"bold",
+    font: 'Poppins',
+    fontWieght: 'bold',
     lineHeight: 45,
+  },
+  btn: {
+    position: 'absolute',
+    top: 550,
   },
   title2: {
     fontSize: 32,
     fontWeight: '300',
-    font:"Poppins",
+    font: 'Poppins',
     color: 'black',
     lineHeight: 45,
     marginBottom: 22,
   },
-  driver:{
-    alignItems:'flex-start',
+  driver: {
+    alignItems: 'flex-start',
     width: 50,
-    height: 64,
+    height: 50,
   },
-  rider:{
-    alignItems:'flex-start',
-    width:154,
-    height:244,
+  rider: {
+    alignItems: 'flex-start',
+    width: 154,
+    height: 244,
+  },
+  containerWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: width * 0.9,
+  },
+  container: {
+    width: 154,
+    height: 244,
+    backgroundColor: '#F8F8F8',
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  selectedContainer: {
+    backgroundColor: '#E5E5E5',
+    borderWidth: 2,
+    borderColor: '#000000',
+  },
+  image: {
+    width: '80%',
+    height: '80%',
+    resizeMode: 'contain',
+  },
+  label: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#444444',
+    marginTop: 10,
   },
 });
 

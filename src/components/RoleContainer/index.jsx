@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
-import {Text, View,TouchableOpacity,Image} from 'react-native';
+import React, {useState} from 'react';
+import {Text, View, TouchableOpacity, Image} from 'react-native';
 import style from './style';
 
-const RoleContainer = ({
-  pictureURL,
-  role,
-}) => {
+const RoleContainer = ({pictureURL, role}) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const handlePress = () => {
@@ -14,13 +11,9 @@ const RoleContainer = ({
   return (
     <TouchableOpacity
       onPress={handlePress}
-      style={[style.container, isSelected && style.selectedContainer]}
-    >
+      style={[style.container, isSelected && style.selectedContainer]}>
       <View style={style.imageContainer}>
-        <Image
-          source={pictureURL}
-          style={style.image}
-        />
+        <Image source={pictureURL} style={style.image} />
         {isSelected && (
           <View style={style.swooshContainer}>
             <View style={style.swoosh} />
