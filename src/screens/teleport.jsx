@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView, Text, View} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
-import VerificationSuccess from './VerificationSuccess';
+import VerificationSuccess from './Auth/VerificationSuccess';
 
 const Teleport = () => {
   const navigation = useNavigation();

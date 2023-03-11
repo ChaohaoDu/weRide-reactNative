@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from './src/navigation/navigation';
-import Verification from './src/screens/Verification';
-import Login from './src/screens/Login';
+import Verification from './src/screens/Auth/Verification';
+import Login from './src/screens/Auth/Login';
 import setCustomText from './src/utils/setCustomText';
 import {SafeAreaView, View} from 'react-native';
 import ActivityBoard from './src/components/ActivityBoard';
