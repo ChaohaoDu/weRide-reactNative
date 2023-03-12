@@ -2,7 +2,9 @@ import {StyleSheet} from 'react-native';
 import {scale} from 'react-native-size-matters';
 
 const styles = StyleSheet.create({
-  root: {
+  activityContainer: {
+    marginBottom: 10,
+
     height: 210,
     width: '100%',
     borderRadius: 20,
@@ -77,6 +79,11 @@ const styles = StyleSheet.create({
     fontSize: scale(14),
     color: '#96A0B5',
     fontWeight: '700',
+  },
+  date: {
+    fontWeight: '700',
+    fontSize: scale(16),
+    marginBottom: scale(10),
   },
 });
 

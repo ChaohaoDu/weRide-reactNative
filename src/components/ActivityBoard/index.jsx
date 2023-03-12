@@ -5,21 +5,18 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const ActivityBoard = () => {
-  const UserInfo = () => {
+const ActivityBoardByDate = ({date, activities}) => {
+  const UserInfo = ({data}) => {
     return (
       <View style={styles.userInfo}>
         <View style={styles.flexContainer}>
-          {/* <Image
-            source={require('../../assets/images/avatar-temp.png')}
-            style={styles.avatar}
-          /> */}
+          <Image source={data.imageUrl} style={styles.avatar} />
 
           <View>
-            <Text>Aly Wang</Text>
+            <Text>{data.name}</Text>
             <Text>
               <MaterialIcons size={13} name={'star-rate'} color={'#FCBD2A'} />{' '}
-              4.8
+              {data.rating}
             </Text>
           </View>
         </View>
@@ -27,7 +24,7 @@ const ActivityBoard = () => {
         <View style={styles.flexContainer}>
           <View>
             <Text style={styles.cost}>Cost</Text>
-            <Text style={styles.princeOrTime}>$7.27</Text>
+            <Text style={styles.princeOrTime}>${data.cost}</Text>
           </View>
           <View style={styles.lookUp}>
             <AntDesign name={'right'} />
@@ -37,27 +34,44 @@ const ActivityBoard = () => {
     );
   };
 
-  const TripRow = () => {
+  const TripRow = ({location, time}) => {
     return (
       <View style={styles.rowContainer}>
         <View style={{display: 'flex', flexDirection: 'row'}}>
           <Ionicons name={'location-sharp'} color={'#000'} size={20} />
-          <Text style={styles.address}>4545 La Jolla Village Dr</Text>
+          <Text style={styles.address}>{location}</Text>
         </View>
-        <Text>8:30 AM</Text>
+        <Text>{time}</Text>
+      </View>
+    );
+  };
+
+  const ActivityBoard = ({activity}) => {
+    return (
+      <View style={styles.activityContainer}>
+        <UserInfo data={activity} />
+        <View style={styles.tripInfo}>
+          <TripRow
+            location={activity.pickupLocation}
+            time={activity.pickupTime}
+          />
+          <TripRow
+            location={activity.dropOffLocation}
+            time={activity.dropOffTime}
+          />
+        </View>
       </View>
     );
   };
 
   return (
-    <View style={styles.root}>
-      <UserInfo />
-      <View style={styles.tripInfo}>
-        <TripRow />
-        <TripRow />
-      </View>
+    <View>
+      <Text style={styles.date}>{date}</Text>
+      {activities.map(x => {
+        return <ActivityBoard activity={x} key={x.id} />;
+      })}
     </View>
   );
 };
 
-export default ActivityBoard;
+export default ActivityBoardByDate;

@@ -17,6 +17,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Octicons from 'react-native-vector-icons/Octicons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Colors} from '../constants/colors';
+import Activity from '../screens/Main/Activity';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -51,7 +52,7 @@ const Navigation = () => {
           headerShown: false,
         })}>
         <Tab.Screen name="Home" component={Signup} />
-        <Tab.Screen name="Activity" component={Login} />
+        <Tab.Screen name="Activity" component={Activity} />
         <Tab.Screen name="Profile" component={Login} />
       </Tab.Navigator>
     );
